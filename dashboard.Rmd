@@ -67,29 +67,6 @@ inner_join(popular_aisle, mydata, by = 'aisle') %>%
 ### Chart C
 
 ```{r}
-# Line plot for nunmbers of Bananas and Bag of Organic Bananas ordered in each day
-mydata %>% 
-  group_by(order_dow,product_name) %>% 
-  count(product_name)  %>% 
-  filter(product_name %in% c('Banana', 'Bag of Organic Bananas')) %>% 
-  arrange(desc(n)) %>%    
-  ungroup(order_dow) %>% 
-  mutate(order_dow = recode(order_dow,
-                            '0' = 'Sunday',
-                            '1' = 'Monday',
-                            '2' = 'Tuesday',
-                            '3' = 'Wednesday',
-                            '4' = 'Thursday', 
-                            '5' = 'Friday',
-                            '6' = 'Saturday'),
-         order_dow = fct_relevel(order_dow, c('Monday','Tuesday','Wednesday',
-                                   'Thursday', 'Friday', 'Saturday', 'Sunday'))) %>% 
-  pivot_wider(values_from = 'n', names_from = 'product_name') %>% 
-  janitor::clean_names() %>% 
-  plot_ly(x = ~order_dow, y = ~banana, name = 'Banana', 
-          type = 'scatter',  mode = 'lines') %>% 
-  add_trace(x = ~order_dow, y = ~bag_of_organic_bananas ,
-            name = "Bag of Organic Bananas", connectgaps = TRUE, type = 'scatter',  mode = 'lines') %>% 
-  layout(xaxis = list(title = 'Day'), yaxis = list(title = 'Number'))
+
 ```
 
