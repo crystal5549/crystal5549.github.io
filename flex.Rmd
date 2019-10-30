@@ -1,12 +1,12 @@
 ---
-title: "instacart"
+title: "Instacart"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r include=FALSE}
 library(flexdashboard)
 library(p8105.datasets)
 library(tidyverse)
@@ -22,7 +22,7 @@ Column {data-width=650}
 ```{r}
 data("instacart")
 mydata = instacart
-#Total number of items (n>1k) sold in each aisle 
+#Total number of items (n>10k) sold in each aisle 
 mydata %>% 
   group_by(aisle_id, aisle) %>% 
   summarize(n = n()) %>% 
@@ -81,8 +81,5 @@ mydata %>%
             name = "Bag of Organic Bananas", connectgaps = TRUE, type = 'scatter',  mode = 'lines+markers') %>% 
   layout(xaxis = list(title = 'Day'), yaxis = list(title = 'Number'))
 ```
-```{r}
-rmarkdown::render("flex.Rmd", output_format = "flexdashboard::flex_dashboard")
 
-```
 
