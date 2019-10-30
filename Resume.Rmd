@@ -4,6 +4,7 @@ output: html_document
 ---
 
 
+<center>
 
 <img src="images/profile1.JPG" style="width:75%">
 
@@ -53,3 +54,4 @@ Analysis and Development Department，Analytical researcher, Intern(SQL, Python,
 
 *	Studied capital market, industry and company, analyzed industry trend and potential capitalmarket strategy of individual company
 
+</center>

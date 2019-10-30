@@ -15,4 +15,4 @@ navbar:
       href: https://www.facebook.com/jiaqi.li.33633?ref=bookmarks
 output:
   html_document:
-    theme: cerulean
+    css: bootstrap1.css
