@@ -6,7 +6,7 @@ output: html_document
 
 <center>
 
-<img src="images/profile1.JPG" style="width:75%">
+<img src="images/profile1.JPG" style="width:55%">
 
 ### EDUCATION
 
