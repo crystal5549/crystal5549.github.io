@@ -1,0 +1,88 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(p8105.datasets)
+library(tidyverse)
+library(viridis)
+library(plotly)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+data("instacart")
+mydata = instacart
+#Total number of items (n>1k) sold in each aisle 
+mydata %>% 
+  group_by(aisle_id, aisle) %>% 
+  summarize(n = n()) %>% 
+  filter(n > 10000) %>% 
+  ungroup(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, type = 'bar', color = ~aisle) %>% 
+  layout(xaxis = list(title = 'Aisle'), yaxis = list(title = 'Number'))
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+#boxplot of the hour of the day when users order items 
+#for the first ten popular asile in which  items are ordered the most
+popular_aisle = 
+  mydata %>% 
+  count(aisle, sort = T) %>% 
+  top_n(10)
+
+inner_join(popular_aisle, mydata, by = 'aisle') %>% 
+  select(aisle, order_hour_of_day) %>% 
+  mutate(aisle = fct_reorder(aisle, order_hour_of_day)) %>% 
+  plot_ly(color = ~aisle, y = ~order_hour_of_day, type = 'box') %>% 
+  layout(xaxis = list(title = 'Aisle'), yaxis = list(title = 'Hour'))
+```
+
+### Chart C
+
+```{r}
+# Line plot for nunmbers of Bananas and Bag of Organic Bananas ordered in each day
+mydata %>% 
+  group_by(order_dow,product_name) %>% 
+  count(product_name)  %>% 
+  filter(product_name %in% c('Banana', 'Bag of Organic Bananas')) %>% 
+  ungroup(order_dow) %>% 
+  mutate(order_dow = recode(order_dow,
+                            '0' = 'Sunday',
+                            '1' = 'Monday',
+                            '2' = 'Tuesday',
+                            '3' = 'Wednesday',
+                            '4' = 'Thursday', 
+                            '5' = 'Friday',
+                            '6' = 'Saturday'),
+         order_dow = fct_relevel(order_dow, c('Sunday','Monday','Tuesday','Wednesday',
+                                   'Thursday', 'Friday', 'Saturday'))) %>% 
+  pivot_wider(values_from = 'n', names_from = 'product_name') %>% 
+  janitor::clean_names() %>% 
+  plot_ly(x = ~order_dow, y = ~banana, name = 'Banana', 
+          type = 'scatter',  mode = 'markers+lines') %>% 
+  add_trace(x = ~order_dow, y = ~bag_of_organic_bananas ,
+            name = "Bag of Organic Bananas", connectgaps = TRUE, type = 'scatter',  mode = 'lines+markers') %>% 
+  layout(xaxis = list(title = 'Day'), yaxis = list(title = 'Number'))
+```
+```{r}
+rmarkdown::render("flex.Rmd", output_format = "flexdashboard::flex_dashboard")
+
+```
+
