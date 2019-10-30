@@ -1,0 +1,18 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - icon: fa-envelope fa-lg
+      href: mailto:jl5549@cumc.columbia.edu
+    - icon: fa-github fa-lg
+      href: https://github.com/crystal5549
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/jiaqi-li-a85405149/
+    - icon: fa-facebook fa-lg
+      href: https://www.facebook.com/jiaqi.li.33633?ref=bookmarks
+output:
+  html_document:
+    theme: cerulean

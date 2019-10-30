@@ -1,0 +1,55 @@
+---
+title: "Resume"
+output: html_document
+---
+
+
+
+<img src="images/profile1.JPG" style="width:75%">
+
+### EDUCATION
+
+#### North China Electric Power University
+
+Beijing, China 09/2015- 06/2019
+
+Major in International Economics and Trade
+
+* Core Courses: Statistics, Management Operational Research, Advanced Programming (C), Probability and Mathematical Statistics, Linear Algebra, Advanced Mathematics(1), Advanced Mathematics(2), Mathematical Modeling Language and Application of MATLAB, Econometrics
+
+#### University of California, Berkeley 
+
+Berkeley, CA 08/2017-05/2018
+
+Exchange Student
+
+* Core Courses: The Structure and Interpretation of Computer Programs, Basic Corporate Finance, International Trade
+
+### INTERNSHIP EXPERIENCE
+
+
+
+#### Guorong Securities, Beijing  
+
+06/2018-08/2018
+
+Analysis and Development Department，Analytical researcher, Intern(SQL, Python, Wind)
+
+*	Conducted regression analysis of global asset price and other macroeconomic index, built Period Model of global asset price and other macroeconomic index using Excel, Python and SQL, combined with Numpy package and Pandas package in writing code
+
+* Conducted Fourier transform and joint spectral estimation to show that there were three major cycles in the global financial and economic system around respectively the 42nd, 100th and 200th month, and the law of the cycle was stable
+
+* Utilized Gauss filter and linear regression to extract the periodic factors and extrapolate the prediction, concluded that the three-cycle interpretation on the sequence was up to 70%
+
+*	Constructed asset allocation strategy and industry rotation strategy based on periodic three factors model
+
+#### CITIC Securities Company Limited 
+
+06/2017-08/2017
+
+*	Wrote necessary documents for IPO, mergers and acquisitions, refinancing and new three boards
+
+*	Participated in coordinating meetings of investment banks, law firms and accounting firms,study clients’ financial and legal issues, and prepared memorandums relating to declaration schemes
+
+*	Studied capital market, industry and company, analyzed industry trend and potential capitalmarket strategy of individual company
+

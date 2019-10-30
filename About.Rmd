@@ -1,0 +1,6 @@
+---
+title: "About"
+output: html_document
+---
+
+This is my page. You can find my resume by clicking the "Resume" link. Feel free to click the icon on the top left corner where you can find the way to contact with me and my github page etc.
