@@ -2,9 +2,16 @@
 title: "Crystal Li"
 output: html_document
 ---
+Hi all, this is my page. Come and get to know more about me!
+
 
 [Welcome to my page](About.html)
 
 [Crystal Li's Resume](Resume.html)
 
+<img src = 'images/selfie.JPG' style="width:55%">
 
+
+Currently I am studying in the [Mailman School of Public Health](https://www.mailman.columbia.edu) in Columbia University. I major in Biostatistics where the core courses include Data Science, Biostatistical Methods etc. So excited about my refreshing life in New York City here!
+
+<img src = 'images/class.JPG' style = 'width:65%'>
