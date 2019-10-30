@@ -13,7 +13,7 @@ Hi all, this is my page. Come and get to know more about me!
 
 [Here is dashboard for Problem2](flex.html)
 
-<img src = 'images/selfie.JPG' style="width:45%">
+<img src = 'images/bb.jpeg' style="width:45%">
 
 
 Currently I am studying in the [Mailman School of Public Health](https://www.mailman.columbia.edu) in Columbia University. I major in Biostatistics where the core courses include Data Science, Biostatistical Methods etc. So excited about my refreshing life in New York City here!
